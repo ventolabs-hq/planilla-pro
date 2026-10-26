@@ -1,0 +1,3 @@
+body{font-family:system-ui,sans-serif;max-width:760px;margin:2rem auto;padding:0 1rem;color:#1b2a41}
+.sub{font-size:1.15rem}.btn{display:inline-block;background:#1b2a41;color:#fff;padding:.6rem 1rem;border-radius:6px;text-decoration:none;border:0;cursor:pointer}
+.btn.alt{background:#4a6fa5}.warn{color:#8a4b00}footer{margin-top:3rem;font-size:.8rem;color:#555}code{word-break:break-all}
