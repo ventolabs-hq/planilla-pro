@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ventolabs-hq.github.io/planilla-pro/sitemap.xml

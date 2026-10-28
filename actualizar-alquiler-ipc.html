@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cómo actualizar el alquiler por IPC en Argentina (cálculo paso a paso)</title>
+<meta name="description" content="Guía para actualizar el alquiler por IPC del INDEC en Argentina: fórmula con índices, ejemplo ilustrativo, dónde bajar los datos oficiales y errores comunes.">
+<link rel="canonical" href="https://ventolabs-hq.github.io/planilla-pro/actualizar-alquiler-ipc.html">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿Cuál es la fórmula para actualizar el alquiler por IPC?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Alquiler nuevo = alquiler actual × (índice IPC del mes de actualización ÷ índice IPC del mes de inicio). Se usan los valores del índice (nivel general), no la suma de las variaciones mensuales."}},
+    {"@type": "Question", "name": "¿Dónde consigo los datos oficiales del IPC?",
+     "acceptedAnswer": {"@type": "Answer", "text": "En el sitio del INDEC (indec.gob.ar), sección Precios / Índice de precios al consumidor, y en Datos Argentina (datos.gob.ar), que publica las mismas series en formato descargable."}},
+    {"@type": "Question", "name": "¿Puedo sumar las inflaciones mensuales para calcular el aumento?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No. Las variaciones mensuales se componen (se multiplican), no se suman. Sumarlas da un aumento menor al real. Lo más simple es dividir los valores del índice entre los dos meses."}},
+    {"@type": "Question", "name": "¿Qué meses de IPC tengo que usar?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Los que indique tu contrato. Como el INDEC publica el IPC de un mes a mediados del mes siguiente, muchos contratos usan el último índice publicado al momento del ajuste. Revisá la cláusula de actualización."}},
+    {"@type": "Question", "name": "¿Esta guía es asesoramiento legal?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No. Es una explicación del cálculo matemático. Lo que vale es lo que dice tu contrato y la normativa vigente; ante dudas, consultá con un profesional."}}
+  ]
+}
+</script>
+</head>
+<body><main>
+<h1>Cómo actualizar el alquiler por IPC en Argentina</h1>
+<p class="sub">El cálculo paso a paso con el Índice de Precios al Consumidor (IPC) del INDEC, un ejemplo ilustrativo, dónde conseguir los datos oficiales y los errores más comunes.</p>
+
+<h2>La fórmula</h2>
+<p>Si tu contrato dice que el alquiler se ajusta por IPC, el cálculo es una regla de tres entre dos valores del índice (nivel general):</p>
+<p><code>Alquiler nuevo = Alquiler actual × (IPC del mes de actualización ÷ IPC del mes de inicio)</code></p>
+<ul>
+<li><b>IPC del mes de inicio</b>: el valor del índice del mes de referencia en que empezó el contrato (o del último ajuste).</li>
+<li><b>IPC del mes de actualización</b>: el valor del índice del mes de referencia que corresponde al nuevo ajuste.</li>
+<li>El cociente entre ambos es el coeficiente de actualización. Si da 1,12, el alquiler sube 12%.</li>
+</ul>
+<p>Usá siempre los <b>valores del índice</b>, no las variaciones porcentuales. Así el cálculo incluye automáticamente el efecto acumulado de todos los meses intermedios.</p>
+
+<h2>Ejemplo ilustrativo</h2>
+<p class="warn">Atención: los números de este ejemplo son inventados y redondos, solo para mostrar el cálculo. No son valores reales del INDEC.</p>
+<ol>
+<li>Alquiler actual: <b>$400.000</b>.</li>
+<li>Índice IPC del mes de inicio (valor ficticio): <b>1.000</b>.</li>
+<li>Índice IPC del mes de actualización (valor ficticio): <b>1.150</b>.</li>
+<li>Coeficiente: 1.150 ÷ 1.000 = <b>1,15</b> (un aumento del 15%).</li>
+<li>Alquiler nuevo: $400.000 × 1,15 = <b>$460.000</b>.</li>
+</ol>
+<p>Con los datos reales, el procedimiento es exactamente el mismo: buscás los dos valores del índice, los dividís y multiplicás el alquiler por el resultado.</p>
+
+<h2>Dónde conseguir los datos oficiales del IPC</h2>
+<ul>
+<li><a href="https://www.indec.gob.ar/">INDEC</a> (indec.gob.ar): sección Precios → Índice de precios al consumidor. Ahí están el informe técnico mensual, el calendario de publicación y los cuadros con los valores del índice.</li>
+<li><a href="https://datos.gob.ar/">Datos Argentina</a> (datos.gob.ar): publica las series del INDEC en formatos descargables (CSV, XLSX), con licencia Creative Commons Atribución 4.0.</li>
+</ul>
+<p>El INDEC publica el IPC de cada mes alrededor de mediados del mes siguiente. Por eso, al momento de un ajuste, el último dato disponible suele ser el del mes anterior (o dos meses antes). Revisá qué meses indica tu contrato.</p>
+
+<h2>Errores comunes</h2>
+<ul>
+<li><b>Sumar las inflaciones mensuales.</b> Tres meses de 5% no son 15%: compuestos dan 1,05 × 1,05 × 1,05 = 1,157625, o sea 15,76%. Dividir los valores del índice evita este error.</li>
+<li><b>Usar la inflación interanual cuando el período no es de 12 meses.</b> Si el ajuste es trimestral o cuatrimestral, la variación interanual no sirve; calculá el cociente entre los dos meses que corresponden.</li>
+<li><b>Mezclar índices.</b> El IPC tiene nivel general, regiones y divisiones. Usá el que fije el contrato (normalmente nivel general nacional) en ambos meses.</li>
+<li><b>Equivocarse de mes.</b> Confundir el mes de publicación con el mes al que corresponde el dato desplaza todo el cálculo.</li>
+<li><b>Confundir IPC con otros índices.</b> Algunos contratos usan otros índices (por ejemplo, el ICL del Banco Central u otros acordados). Fijate cuál dice el tuyo.</li>
+<li><b>Redondear antes de tiempo.</b> Calculá el coeficiente con varios decimales y redondeá solo el monto final.</li>
+</ul>
+
+<h2>Hacerlo en Excel o Google Sheets</h2>
+<p>Si tenés los índices en una columna, la fórmula es directa: <code>=B2*(C_actualizacion/C_inicio)</code>, reemplazando las referencias por las celdas del índice de cada mes. <a href="index.html">Planilla Pro Argentina</a> trae la serie de IPC del INDEC ya organizada y una pestaña <b>Actualizar monto</b> que hace este cálculo por vos, de a un monto o varios a la vez.</p>
+<p><a class="btn" href="index.html">Ver Planilla Pro</a> <a class="btn alt" href="muestra_gratis.xlsx" download>Descargar muestra gratis</a></p>
+
+<h2>Preguntas frecuentes</h2>
+<details><summary>¿Cuál es la fórmula para actualizar el alquiler por IPC?</summary><p>Alquiler nuevo = alquiler actual × (índice IPC del mes de actualización ÷ índice IPC del mes de inicio). Se usan los valores del índice (nivel general), no la suma de las variaciones mensuales.</p></details>
+<details><summary>¿Dónde consigo los datos oficiales del IPC?</summary><p>En el sitio del INDEC (indec.gob.ar), sección Precios / Índice de precios al consumidor, y en Datos Argentina (datos.gob.ar), que publica las mismas series en formato descargable.</p></details>
+<details><summary>¿Puedo sumar las inflaciones mensuales para calcular el aumento?</summary><p>No. Las variaciones mensuales se componen (se multiplican), no se suman. Sumarlas da un aumento menor al real. Lo más simple es dividir los valores del índice entre los dos meses.</p></details>
+<details><summary>¿Qué meses de IPC tengo que usar?</summary><p>Los que indique tu contrato. Como el INDEC publica el IPC de un mes a mediados del mes siguiente, muchos contratos usan el último índice publicado al momento del ajuste. Revisá la cláusula de actualización.</p></details>
+<details><summary>¿Esta guía es asesoramiento legal?</summary><p>No. Es una explicación del cálculo matemático. Lo que vale es lo que dice tu contrato y la normativa vigente; ante dudas, consultá con un profesional.</p></details>
+
+<p class="warn">Esta guía explica un cálculo y no es asesoramiento legal, financiero ni impositivo. Las condiciones de cada alquiler dependen del contrato y de la normativa vigente; ante dudas, consultá con un abogado o profesional matriculado.</p>
+</main>
+<footer><p>Fuentes de datos: INDEC, vía Datos Argentina (datos.gob.ar), licencia <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a>. Planilla Pro no es un producto del INDEC ni de Datos Argentina. <a href="index.html">Inicio</a> · <a href="comprar-manual.html">Comprar</a></p></footer>
+</body></html>
